@@ -1,5 +1,3 @@
-require "axlsx/builder/version"
-
 module Axlsx
   module Builder
     class Object
