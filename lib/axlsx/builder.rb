@@ -94,10 +94,10 @@ module Axlsx
         combined_style.merge!(bg_color: self.color) if self.color
         combined_style.merge!(fg_color: self.font.color)
         combined_style.merge!(alignment: {horizontal: h_align, vertical: v_align})
-        if self.borders == true
-          combined_style.merge! border: {style: self.border_thickness || :medium, color: '00000000'}
+        if self.format.borders == true
+          combined_style.merge! border: {style: self.format.border_thickness || :medium, color: '00000000'}
         elsif self.borders
-          combined_style.merge! border: {style: self.border_thickness || :medium, color: '00000000', edges: self.borders}
+          combined_style.merge! border: {style: self.format.border_thickness || :medium, color: '00000000', edges: self.format.borders}
         end
         combined_style
       end
